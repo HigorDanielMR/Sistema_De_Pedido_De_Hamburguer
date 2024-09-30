@@ -20,5 +20,6 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        position: absolute;
     }
 </style>
