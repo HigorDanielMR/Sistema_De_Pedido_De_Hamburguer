@@ -83,71 +83,7 @@
   ],
   "burgers": [
     {
-      "nome": "Matheus Battisti",
-      "carne": "Picanha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Finalizado",
-      "id": "1"
-    },
-    {
-      "nome": "João Coelho",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": "4"
-    },
-    {
-      "id": "2e7d",
-      "nome": "Higor Daniel Morais Rodrigues Higor",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "status": "Solicitado"
-    },
-    {
-      "id": "c13f",
-      "nome": "Higor Daniel Morais Rodrigues Higor",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Cheddar",
-        "Salame"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "ec58",
-      "nome": "Higor Daniel Morais Rodrigues Higor",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "9b02",
-      "nome": "Adriana",
-      "carne": "Picanha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Cheddar",
-        "Salame"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "fde3",
+      "id": "1",
       "nome": "Higor e adriana",
       "carne": "Alcatra",
       "pao": "3 Queijos",
@@ -155,34 +91,6 @@
         "Cheddar",
         "Salame"
       ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "533c",
-      "nome": "Higor e adriana",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Cheddar",
-        "Salame"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "7326",
-      "nome": null,
-      "carne": null,
-      "pao": null,
-      "opcionais": [],
-      "status": "Solicitado"
-    },
-    {
-      "id": "6e02",
-      "nome": "",
-      "carne": "",
-      "pao": "",
-      "opcionais": [],
       "status": "Solicitado"
     }
   ]
