@@ -31,7 +31,7 @@
         color: #fff;
         text-align: center;
         font-size: 60px;
-        background-color: #222;
+        background-color: #131212;
         padding: 0px 10px;
     }
     @media (max-width: 1061px) {

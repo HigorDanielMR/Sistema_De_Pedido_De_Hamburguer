@@ -83,14 +83,11 @@
   ],
   "burgers": [
     {
-      "id": "1",
-      "nome": "Higor e adriana",
-      "carne": "Alcatra",
+      "id": "38bf",
+      "nome": "Teste",
+      "carne": "Maminha",
       "pao": "3 Queijos",
-      "opcionais": [
-        "Cheddar",
-        "Salame"
-      ],
+      "opcionais": [],
       "status": "Solicitado"
     }
   ]

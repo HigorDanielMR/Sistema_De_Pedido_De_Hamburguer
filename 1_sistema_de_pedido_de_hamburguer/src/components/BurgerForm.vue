@@ -5,25 +5,28 @@
             <form id="burger-form" @submit="CriarBurger">
                 <div class="input-container">
                     <label for="nome">Nome do cliente:</label>
-                    <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome">
+                    <input type="text" name="nome" id="nome" v-model="nome" :class="{'is-invalid': nomeError}" placeholder="Digite o seu nome">
+                    <span v-if="nomeError" class="error">{{ nomeError }}</span>
                 </div>
                 <div class="input-container">
                     <label for="pao">Escolha o pão:</label>
-                    <select name="pao" id="pao" v-model="pao">
+                    <select name="pao" id="pao" v-model="pao" :class="{'is-invalid': paoError}">
                         <option value="">Selecione o seu pão:</option>
                         <option  v-for="pao in paes" :key="pao.id" :value="pao.tipo">
                             {{pao.tipo}}
                         </option>
                     </select>
+                    <span v-if="paoError" class="error">{{ paoError }}</span>
                 </div>
                 <div class="input-container">
                     <label for="carne">Selecione a carne do seu burger:</label>
-                    <select name="carne" id="carne" v-model="carne">
+                    <select name="carne" id="carne" v-model="carne" :class="{'is-invalid': carneError}">
                         <option value="">Selecione o seu tipo de carne</option>
                         <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">
                             {{carne.tipo}}
                         </option>
                     </select>
+                    <span v-if="carneError" class="error">{{ carneError }}</span>
                 </div>
                 <div id="opcionais-container" class="input-container">
                     <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
@@ -38,6 +41,8 @@
             </form>
         </div>
     </div>
+
+
 </template>
 
 <script>
@@ -54,6 +59,9 @@ import Message from './Message.vue';
                 pao: null,
                 carne: null,
                 opcionais: [],
+                nomeError: '',
+                paoError: '',
+                carneError: '',
                 msg: null
             }
         },
@@ -68,6 +76,30 @@ import Message from './Message.vue';
             },
             async CriarBurger(e){
                 e.preventDefault();
+
+                this.nomeError = '';
+                this.paoError = '';
+                this.carneError = '';
+                this.opcionaisError = '';
+
+                if (!this.nome) {
+                    this.nomeError = 'Nome é obrigatório';
+                } 
+                else if (this.nome.length < 3 || this.nome.length > 260) {
+                    this.nomeError = 'Nome deve ter entre 2 e 260 caracteres';
+                }
+
+                if (!this.pao) {
+                    this.paoError = 'Você deve escolher um pão';
+                }
+
+                if (!this.carne) {
+                    this.carneError = 'Você deve escolher uma carne';
+                } 
+
+                if (this.nomeError || this.paoError || this.carneError || this.opcionaisError) {
+                    return;
+                }
 
                 const data = {
                     nome: this.nome,
@@ -114,8 +146,8 @@ import Message from './Message.vue';
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
+        justify-content: center;
     }
-
 
     label{
         font-weight: bold;
@@ -164,7 +196,6 @@ import Message from './Message.vue';
         border: 2px solid #222;
         padding: 10px;
         font-size: 16px;
-        margin: 0 auto;
         cursor: pointer;
         transition: .5s;
     }
@@ -172,5 +203,12 @@ import Message from './Message.vue';
     .submit-btn:hover{
         background-color: transparent;
         color: #222;
+    }
+
+    .is-invalid {
+        border-color: red;
+    }
+    .error {
+        color: red;
     }
 </style>
